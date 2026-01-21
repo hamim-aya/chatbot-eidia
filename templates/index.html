@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 Chatbot EIDIA-UEMF</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <h1>🤖 Chatbot EIDIA-UEMF</h1>
+                <p>Assistant Intelligent pour l'École d'Ingénierie Digitale</p>
+            </div>
+        </header>
+
+        <!-- Chat Container -->
+        <main class="chat-container">
+            <!-- Messages Area -->
+            <div class="messages" id="messages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Bienvenue! 👋 Je suis l'assistant EIDIA-UEMF. Je suis prêt à répondre à vos questions sur l'école, les filières, les programmes, et bien plus encore.</p>
+                        <p>Comment puis-je vous aider?</p>
+                    </div>
+                    <div class="message-meta">
+                        <span class="timestamp" id="welcome-time"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="userInput" 
+                        placeholder="Posez votre question..." 
+                        autocomplete="off"
+                    >
+                    <button id="sendBtn" class="send-btn" title="Envoyer (Entrée)">
+                        <span>📤</span>
+                    </button>
+                </div>
+                
+                <!-- Controls -->
+                <div class="controls">
+                    <label class="checkbox-control">
+                        <input type="checkbox" id="reformulate" checked>
+                        <span>Reformulation Gemini</span>
+                    </label>
+                    <button id="clearBtn" class="clear-btn" title="Effacer le chat">
+                        <span>🗑️</span> Effacer
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>💡 Conseil: Appuyez sur <kbd>Entrée</kbd> pour envoyer votre message</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
